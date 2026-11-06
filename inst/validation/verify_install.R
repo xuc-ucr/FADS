@@ -1,0 +1,5 @@
+cat('Installed FADS:', as.character(utils::packageVersion('FADS')), '\n')
+cat('Installed at:', find.package('FADS'), '\n')
+print(formals(FADS::fads))
+stopifnot('bandwidth_method' %in% names(formals(FADS::fads)))
+cat('PASS: Installed FADS exports bandwidth_method\n')

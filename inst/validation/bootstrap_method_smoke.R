@@ -1,0 +1,22 @@
+# Fast smoke test for method propagation. Run in a fresh R session.
+library(FADS)
+library(survival)
+stopifnot('bandwidth_method' %in% names(formals(FADS::fads)))
+set.seed(24680)
+n <- 600
+X <- rnorm(n); Z <- rbinom(n, 1, .5)
+W <- X + rnorm(n, sd = .8)
+ft <- rexp(n, rate = exp(log(2) * X - .5 * Z))
+ct <- runif(n, 0, 1.3)
+d <- data.frame(time = pmin(ft, ct), status = as.integer(ft <= ct), X, Z, W)
+s <- fads_design(d, 'time', 'status', 'W', 'X', 300, 1, seed = 55)
+fit <- fads(Surv(time, status) ~ X + Z, s, 'X', 'W',
+            bandwidth_method = 'stratum', engine = 'vectorized')
+cat('Fit method:', fit$bandwidth_method, '\n')
+cat('Bandwidths:\n'); print(fit$bandwidth_by_stratum)
+set.seed(55)
+b <- fads_bootstrap(fit, B = 3)
+cat('Bootstrap methods:', paste(b$bootstrap_bandwidth_methods, collapse=', '), '\n')
+cat('Successful bootstrap replicates:', b$bootstrap_success, '/3\n')
+stopifnot(all(b$bootstrap_bandwidth_methods[!is.na(b$bootstrap_bandwidth_methods)] == 'stratum'))
+cat('PASS: Bootstrap propagated stratum bandwidth mode\n')

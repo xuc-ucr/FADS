@@ -1,0 +1,3 @@
+variable,true,mean_estimate,bias,empirical_sd,mean_bootstrap_se,coverage_95,monte_carlo_datasets,bootstrap_attempts_per_dataset
+X,0.6931472,0.6953654,0.002218211,0.08668909,0.08866423,0.94,100,100
+Z,-0.5,-0.5103336,-0.010333587,0.15221986,0.14793702,0.94,100,100

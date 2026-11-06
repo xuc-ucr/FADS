@@ -1,0 +1,24 @@
+Package: FADS
+Type: Package
+Title: Semiparametric Inference for Two-Phase Failure-Time-Auxiliary-Dependent Sampling
+Version: 0.4.0
+Authors@R: c(
+    person("Xu", "Cao", email = "xuc@ucr.edu", role = c("aut", "cre")),
+    person("Qingning", "Zhou", role = "aut"),
+    person("Jianwen", "Cai", role = "aut"),
+    person("Haibo", "Zhou", role = "aut")
+    )
+Description: Implements two-phase failure-time-auxiliary-dependent sampling and a
+    plug-in semiparametric pseudo-likelihood estimator for right-censored Cox
+    regression with expensive covariates measured on a validation subsample.
+    Includes cohort bootstrap inference and simulation-based examples.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports: survival, stats
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+URL: https://github.com/xuc-ucr/FADS
+BugReports: https://github.com/xuc-ucr/FADS/issues
+NeedsCompilation: no
+RoxygenNote: 7.2.3

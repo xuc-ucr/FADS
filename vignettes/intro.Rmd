@@ -1,0 +1,40 @@
+---
+title: "FADS: Simulation-based introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FADS: Simulation-based introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+FADS estimates Cox regression coefficients under two-phase failure-time-auxiliary-dependent sampling, when an expensive covariate is measured only in a validation subsample. The following example generates synthetic data.
+
+```{r, eval=FALSE}
+library(FADS)
+library(survival)
+set.seed(123)
+N <- 1500L
+X <- rnorm(N)
+Z <- rbinom(N, 1, 0.5)
+W <- X + rnorm(N, sd = 0.8)
+T <- rexp(N, rate = exp(log(2) * X - 0.5 * Z))
+C <- runif(N, 0, 0.5)
+d <- data.frame(time = pmin(T, C), status = as.integer(T <= C), X, Z, W)
+s <- fads_design(d, "time", "status", "W", "X",
+                 n_srs = 300, n_corner = 5, seed = 123)
+fit <- fads(Surv(time, status) ~ X + Z, s,
+            expensive = "X", auxiliary = "W",
+            bandwidth_method = "stratum")
+coef(fit)
+```
+
+The estimator treats expensive-covariate values in nonvalidation subjects as unavailable. Use `fads_bootstrap()` to estimate a covariance matrix, noting that bootstrap inference can be computationally expensive.
+
+```{r, eval=FALSE}
+fit_boot <- fads_bootstrap(fit, B = 30)
+summary(fit_boot)
+```
+
+For checkpointed Monte Carlo calibration, use the scripts in `inst/validation/`. The simulation results reported in the README are from a separate 100-cohort research validation and are not recalculated during vignette builds.
