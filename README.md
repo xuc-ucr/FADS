@@ -61,9 +61,17 @@ devtools::check(document = FALSE)
 
 `NAMESPACE` and `man/*.Rd` are currently maintained manually. The preceding version passed a full R CMD check on R 4.2.3 (macOS) with zero errors, zero warnings, and one local-time verification note; **this GitHub-focused revision has not yet been independently checked in R**. GitHub Actions is configured to run checks on pushes and pull requests.
 
-## Citation and maintainers
+## Citation
 
-Please cite the associated FADS methodology paper. Package authors: Xu Cao, Qingning Zhou, Jianwen Cai, and Haibo Zhou (paper author order). Maintainer: Xu Cao (xuc@ucr.edu). Confirm the full paper citation and software attribution with the coauthors before publication.
+If you use the FADS package in your research, please cite:
+
+Cao, X., Zhou, Q., Cai, J., & Zhou, H. (2025). Semiparametric inference for a two-phase failure-time-auxiliary-dependent sampling design. *Statistics in Medicine, 44*(18–19), e70239. https://doi.org/10.1002/sim.70239
+
+## Authors and Maintainer
+
+**Package authors:** Xu Cao, Qingning Zhou, Jianwen Cai, and Haibo Zhou.
+
+**Maintainer:** Xu Cao (xuc@ucr.edu).
 
 ## License
 
