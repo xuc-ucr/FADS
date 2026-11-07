@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use FADS, please cite the associated paper."
+title: "FADS: Semiparametric Inference for Two-Phase Failure-Time-Auxiliary-Dependent Sampling"
+type: software
+authors:
+  - family-names: Cao
+    given-names: Xu
+  - family-names: Zhou
+    given-names: Qingning
+  - family-names: Cai
+    given-names: Jianwen
+  - family-names: Zhou
+    given-names: Haibo
+version: 0.4.0
+repository-code: "https://github.com/xuc-ucr/FADS"
+license: MIT
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Cao
+      given-names: Xu
+    - family-names: Zhou
+      given-names: Qingning
+    - family-names: Cai
+      given-names: Jianwen
+    - family-names: Zhou
+      given-names: Haibo
+  title: "Semiparametric Inference for a Two-Phase Failure-Time-Auxiliary-Dependent Sampling Design"
+  journal: "Statistics in Medicine"
+  year: 2025
+  volume: "44"
+  issue: "18-19"
+  doi: "10.1002/sim.70239"
