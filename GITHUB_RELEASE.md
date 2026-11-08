@@ -1,4 +1,4 @@
-# FADS v0.4.0 — GitHub Release Checklist
+# FADS v0.4.0 — Release Summary
 
 ## Completed
 
@@ -12,14 +12,12 @@
 - [x] Successfully install FADS v0.4.0 from GitHub.
 - [x] Pass the GitHub Actions R-CMD-check workflow.
 
-## Remaining Before Public Release
+## Public Release Completed
 
-- [ ] Confirm software copyright ownership with coauthors.
-- [ ] Add the exact published paper citation to README and/or CITATION.
-- [ ] Review the repository for unpublished data, credentials, personal paths, and unrelated files.
-- [ ] Review the supported R versions and operating systems tested by GitHub Actions.
-- [ ] Obtain final coauthor approval.
-- [ ] Create the release tag `v0.4.0` and make the repository public.
+- [x] Obtain final approval from Dr. Zhou.
+- [x] Change repository visibility from Private to Public.
+- [x] Create the official GitHub release v0.4.0.
+- [x] Verify installation from the public repository without authentication.
 
 ## Release Notes
 
