@@ -8,10 +8,11 @@ Authors@R: c(
     person("Jianwen", "Cai", role = "aut"),
     person("Haibo", "Zhou", role = "aut")
     )
-Description: Implements two-phase failure-time-auxiliary-dependent sampling and a
-    plug-in semiparametric pseudo-likelihood estimator for right-censored Cox
-    regression with expensive covariates measured on a validation subsample.
-    Includes cohort bootstrap inference and simulation-based examples.
+Description: FADS implements the two-phase failure-time-auxiliary-dependent sampling (FADS) 
+design and inference under the Cox model, described in Cao, Zhou, Cai and Zhou (2025). 
+There are three main functions: fads_design implements the two-phase FADS design, fads gives 
+the semiparametric pseudo-likelihood estimator, and fads_bootstrap calculates the standard 
+error of the estimator based on bootstrap.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: survival, stats
