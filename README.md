@@ -2,7 +2,12 @@
 
 **Semiparametric inference for two-phase failure-time-auxiliary-dependent sampling**
 
-FADS is a research R package implementing two-phase sampling, a semiparametric pseudo-likelihood estimator for right-censored Cox models with expensive covariates measured on a validation subsample, and cohort-bootstrap inference. 
+FADS implements the two-phase failure-time-auxiliary-dependent sampling (FADS) 
+    design and inference under the Cox model, as described in Cao, Zhou, Cai, and Zhou (2025) 
+    <https://doi.org/10.1002/sim.70239>. The package provides three main functions: 
+    fads_design() implements the two-phase FADS sampling design, 
+    fads() computes the semiparametric pseudo-likelihood estimator of the regression coefficients, 
+    and fads_bootstrap() estimates standard errors using bootstrap.
 
 ## Install from GitHub
 
